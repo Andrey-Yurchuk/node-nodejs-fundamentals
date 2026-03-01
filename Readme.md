@@ -41,6 +41,21 @@ This repository contains solutions for Node.js Fundamentals assignment. The assi
 - `npm run fs:restore` - Restore directory structure from snapshot
 - `npm run fs:findByExt` - Find files by extension in workspace
 - `npm run fs:merge` - Merge .txt files from workspace/parts
+- `npm run fs:merge -- --files a.txt,b.txt,c.txt` - Merge specific files from workspace/parts in provided order
+
+Snapshot format reminder:
+
+```json
+{
+  "rootPath": "/absolute/path/to/workspace",
+  "entries": [
+    { "path": "file1.txt", "type": "file", "size": 1024, "content": "base64" },
+    { "path": "nested", "type": "directory" }
+  ]
+}
+```
+
+`entries[].path` values must be relative to `workspace`.
 
 ### CLI (src/cli)
 
